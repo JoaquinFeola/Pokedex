@@ -11,12 +11,10 @@ export const AppRouter = () => {
     <>
         <Navbar />
         <Routes>
-            <Route path="home" element={ <HomePage /> } />
+            <Route path="/" element={ <HomePage /> } />
             <Route path="pokedex" element={ <PokedexContent/> } />
 
             <Route path="pokedex/:pokemonId" element={ <PokemonPage /> } />
-
-            <Route path="/" element={<Navigate to={"home"}/>} />
             <Route path="*" element={<NotFound />} />
             {/* <Route path="pokemon/" element={<NotFound />} /> */}
         </Routes>

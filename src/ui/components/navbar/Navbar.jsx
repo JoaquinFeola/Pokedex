@@ -18,7 +18,7 @@ export const Navbar = () => {
 
                     <NavLink
                         className={"nav-item nav-link"}
-                        to="home"
+                        to="/"
                     >
                         Inicio
                     </NavLink>
