@@ -18,14 +18,14 @@ export const Navbar = () => {
 
                     <NavLink
                         className={"nav-item nav-link"}
-                        to="/"
+                        to="/Pokedex/"
                     >
                         Inicio
                     </NavLink>
 
                     <NavLink
                         className={"nav-item nav-link"}
-                        to="pokedex"
+                        to="/Pokedex/pokdex"
                     >
                         Pokedex
                     </NavLink>
