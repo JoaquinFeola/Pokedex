@@ -14,7 +14,7 @@ export const AppRouter = () => {
             <Route path="home" element={ <HomePage /> } />
             <Route path="pokedex" element={ <PokedexContent/> } />
 
-            <Route path="pokemon/:pokemonId" element={ <PokemonPage /> } />
+            <Route path="pokedex/:pokemonId" element={ <PokemonPage /> } />
 
             <Route path="/" element={<Navigate to={"home"}/>} />
             <Route path="*" element={<NotFound />} />

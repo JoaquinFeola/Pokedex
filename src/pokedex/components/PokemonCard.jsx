@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 export const PokemonCard = ({ pokemonData }) => {
     const navigate = useNavigate();
     const navigatePokemon = () => {
-        navigate(`/pokemon/${pokemonData.id}`)
+        navigate(`/pokedex/${pokemonData.id}`)
     };
     return (
         <div className="card animate__animated">
