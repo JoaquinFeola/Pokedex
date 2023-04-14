@@ -42,7 +42,12 @@
     flex-direction: column;
     align-items: center;
     margin-top: 25px;
+    margin-bottom: 40px;
     filter: drop-shadow(0 0 5px #a7a4a496);
+}
+.pok-card .pokemon-types {
+    background-color: #f3efef;
+
 }
 .pokemon-card {
     width: 100%;

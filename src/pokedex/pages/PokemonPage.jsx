@@ -29,7 +29,18 @@ const PokemonCardPage = ({ pokemon }) => {
           </div>
         </div>
       </div>
+      <div className="pokemon-types w-100 d-flex justify-content-center">
+        <div className="row">
+          <div className="col text-center">
+            <h4>Types</h4>
+            <div className="col text-center p-2">
+              <p className='bg-primary text-white p-2 rounded'>{pokemon.types[0].type.name}</p>
+              
+            </div>
+          </div>
+        </div>
 
+      </div>
     </div>
   )
 }
