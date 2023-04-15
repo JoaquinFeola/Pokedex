@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom"
+import { Navigate,  Route,  Routes } from "react-router-dom"
 import { Navbar } from "../ui/components/navbar/Navbar"
 import { PokedexContent } from "../pokedex/pages/PokedexContent"
 import { HomePage } from "../ui/pages/HomePage"
@@ -10,13 +10,15 @@ export const AppRouter = () => {
   return (
     <>
         <Navbar />
-        <Routes>
-            <Route path="/" element={ <HomePage /> } />
-            <Route path="/pokedex" element={ <PokedexContent/> } />
-            <Route path="/pokedex/:pokemonId" element={ <PokemonPage /> } />
+        {/* <Router> */}
+          <Routes>
+              <Route path="/" element={ <HomePage /> } />
+              <Route path="/pokedex" element={ <PokedexContent/> } />
+              <Route path="/pokedex/:pokemonId" element={ <PokemonPage /> } />
 
-            <Route path="/*" element={<NotFound />} />
-        </Routes>
+              <Route path="/*" element={<NotFound />} />
+          </Routes>
+        {/* </Router> */}
         <Footer />
     </>
   )
