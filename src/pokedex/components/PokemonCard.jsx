@@ -4,7 +4,7 @@ export const PokemonCard = ({ pokemonData }) => {
     const navigate = useNavigate();
 
     const navigatePokemon = () => {
-        navigate(`/Pokedex/pokdex/${pokemonData.id}`);
+        navigate(`/pokedex/${pokemonData.id}`);
     };
     return (
         <div className="card animate__animated">

@@ -8,7 +8,7 @@ export const Navbar = () => {
 
             <Link
                 className="navbar-brand"
-                to="home"
+                to="/"
             >
                 Pokedex
             </Link>
@@ -18,14 +18,14 @@ export const Navbar = () => {
 
                     <NavLink
                         className={"nav-item nav-link"}
-                        to="/Pokedex/"
+                        to="/"
                     >
                         Inicio
                     </NavLink>
 
                     <NavLink
                         className={"nav-item nav-link"}
-                        to="/Pokedex/pokdex"
+                        to="/pokedex"
                     >
                         Pokedex
                     </NavLink>

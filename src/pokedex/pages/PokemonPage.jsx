@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { usePokemons } from '../hooks/usePokemons';
 const PokemonCardPage = ({ pokemon }) => {
   const lag = 10
