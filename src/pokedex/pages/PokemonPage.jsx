@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { usePokemons } from '../hooks/usePokemons';
 const PokemonCardPage = ({ pokemon }) => {
-
+  console.log(pokemon);
   return (
     <div className="pok-card">
       <div className="card-top-body text-center">
@@ -23,22 +23,46 @@ const PokemonCardPage = ({ pokemon }) => {
               <p className='text-stat-result'>{ pokemon.weight / 10 } kg</p>
             </div>
             <div className="col">
-              <p className='text-white text-stat'>Category</p>
-              <p className='text-white text-stat'>Category</p>
+              <p className='text-white text-stat'>Abilities</p>
+              <p className='text-stat-result'>{pokemon.abilities[0].ability.name}</p>
             </div>
           </div>
         </div>
       </div>
       <div className="pokemon-types w-100 d-flex justify-content-center">
         <div className="row">
-          <div className="col text-center">
+            <div className="stats rounded ">
+              <h3 className='text-white'>Base points</h3>
+              {
+                pokemon.stats.map((stat) => (
+                  <h4 
+                    key={`${stat.stat.name}${pokemon.name}`} 
+                    className=' p-2 text-white'
+                  >
+                    {stat.stat.name}: <b>{stat.base_stat}</b>
+                  </h4>
+                ))
+              }
+          </div>
+          <div className="col text-center pokemon-types-container mt-4">
             <h4>Types</h4>
             <div className="row text-center p-2">
-              <p className='bg-primary text-white p-2 rounded'>{pokemon.types[0].type.name}</p>
+              <p 
+                className='text-white p-2 rounded' 
+                style={{ background:  `var(--${pokemon.types[0].type.name})` }}
+              >
+                  <b>{pokemon.types[0].type.name}</b>
+              </p>
               {
                 ( pokemon.types.length > 1 ) 
                   && (
-                    <p className='bg-primary text-white p-2 rounded'>{pokemon.types[1].type.name}</p>
+                    <p 
+                      className='text-white p-2 rounded'
+                      style={{ background:  `var(--${pokemon.types[1].type.name})` }}
+
+                    >
+                      <b>{pokemon.types[1].type.name}</b>
+                    </p>
                   )
               }
             </div>
@@ -53,7 +77,7 @@ const PokemonCardPage = ({ pokemon }) => {
 
 
 export const PokemonPage = () => {
-  const { pokemon, isLoading } = usePokemons()
+  const { pokemon, isLoading } = usePokemons();
 
   return (
     <div className='content-page-container pokemon-page animate__animated '>

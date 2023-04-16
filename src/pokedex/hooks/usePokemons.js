@@ -6,8 +6,8 @@ import { pokeData } from "../helpers";
 export const usePokemons = () => {
     const { pokemonId } = useParams();
     const { pokemons } = useContext(PokedexContext);
-    const [pokemon, setPokemon] = useState({});
-    const [isLoading, setIsLoading] = useState(true);
+    const [ pokemon, setPokemon ] = useState({});
+    const [ isLoading, setIsLoading ] = useState(true);
 
     //   agarra la data completa de un pokemon solamente cuando el usuario entra
     const getFullData = async () => {

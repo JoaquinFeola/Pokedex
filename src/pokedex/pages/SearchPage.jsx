@@ -1,23 +1,29 @@
-import { useContext, lazy, Suspense } from "react"
+import { useContext, lazy, Suspense, useEffect, useState } from "react";
 import { PokedexContext } from "../../context/PokedexContext";
 import { searchPokemonByName } from "../helpers/searchPokemonByName";
 import { useForm } from "../../hooks/useForm";
-// import { PokemonCard } from "../components/PokemonCard.jsx";
 const PokemonCard = lazy(() => import('../components/PokemonCard.jsx'))
 
 export const SearchPage = () => {
 
-  const { pokemons } = useContext(PokedexContext);
+  const { pokemonsGetted, setPokemons } = useContext(PokedexContext);
+  const [ pokArr, setPokArr ] = useState([]);
   const { searchText, onInputChange } = useForm({ searchText: '' });
 
-  if (pokemons === undefined) return;
+  useEffect(() => {
+    pokemonsGetted(1008, setPokArr);
+    pokemonsGetted(1008, setPokemons)
+  }, []);
+
 
   const onFormSubmit = (e) => {
     e.preventDefault();
     searchText.trim();
   };
-  const pokemonsFiltered = searchPokemonByName(pokemons, searchText);
 
+  const pokemonsFiltered = searchPokemonByName(pokArr, searchText);
+
+  
   return (
     <div className="content-page-container">
       <h1 className="mt-3 text-center mb-4">Search pokemons</h1>

@@ -6,19 +6,19 @@ export const PokedexProvider = ({ children }) => {
   const [pokemons, setPokemons] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
-  const pokemonsGetted = async() => {
+  const pokemonsGetted = async(number, setPokemons) => {
     setIsLoading(true);
-    const data = await getPokemonsFromApi(1008);
+    const data = await getPokemonsFromApi(number);
     setIsLoading(false)
-    setPokemons([...data]);
+    return setPokemons([...data]);
   };
   
   useEffect(() => {
-    pokemonsGetted();
+    pokemonsGetted(20, setPokemons) ;
   }, []);
 
   return (
-    <PokedexContext.Provider value={{ pokemons, isLoading }}>
+    <PokedexContext.Provider value={{ pokemons, setPokemons, isLoading, pokemonsGetted }}>
         { children }
     </PokedexContext.Provider>
   )

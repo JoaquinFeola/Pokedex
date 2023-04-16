@@ -4,6 +4,32 @@
     box-sizing: border-box;
 }
 
+
+
+:root {
+    --bug: #729F3F;
+    --dragon: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+    --fairy: #FDB9E9;
+    --fire: #FD7D23;
+    --ghost: #7B62A3;
+    --ground: linear-gradient(180deg, #F7DE3F 50%, #AB9842 50%);
+    --normal: #A4ACAF;
+    --psychic: #F366B9;
+    --steel: #9EB7B8;
+    --dark: #707070;
+    --electric: #EED535;
+    --fighting: #D56723;
+    --flying: linear-gradient(180deg, #3DC7EF 50%, #BDB9B8 50%);
+    --grass: #9BCC50;
+    --ice: #51C4E7;
+    --poison: #B97FC9;
+    --rock: #A38C21;
+    --water: #4491C3;
+}
+
+
+
+
 .content-page-container {
     min-height: calc(100vh - (56px * 2) - 1.5rem);
 }
@@ -60,6 +86,12 @@
 .pokemon-card .card-top-body {
     align-self: center;
 }
+
+.stats {
+    background: #0684b6;
+    padding: 3rem;
+}
+
 .pokemon-card img {
     width: 40%;
     height: 40%;

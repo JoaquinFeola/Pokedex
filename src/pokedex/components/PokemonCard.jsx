@@ -1,3 +1,4 @@
+import LazyLoad from "react-lazy-load";
 import { useNavigate } from "react-router-dom";
 
 export default function PokemonCard({ pokemonData }) {
@@ -8,7 +9,9 @@ export default function PokemonCard({ pokemonData }) {
     };
     return (
         <div className="card animate__animated">
-            <img src={ pokemonData.imageURL } alt={ pokemonData.name } onClick={navigatePokemon} className="card-img" />
+            <LazyLoad key={pokemonData.id}>
+                <img src={ pokemonData.imageURL } alt={ pokemonData.name } onClick={navigatePokemon} loading="lazy" className="card-img" />
+            </LazyLoad>
             <div className="card-body">
                 <p className="text-muted">N.° {`${(pokemonData.id)}`}</p>
                 <h4 className="card-title">{pokemonData.name}</h4>
