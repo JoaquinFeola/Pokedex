@@ -29,6 +29,12 @@ export const Navbar = () => {
                     >
                         Pokedex
                     </NavLink>
+                    <NavLink
+                        className={"nav-item nav-link"}
+                        to="/search"
+                    >
+                        Search
+                    </NavLink>
                 </div>
             </div>
         </nav>

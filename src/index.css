@@ -99,6 +99,9 @@
     }
 }
 
+.search_bar {
+    width: 50%;
+}
 
 @media (max-width: 756px) {
     .content-page-container {

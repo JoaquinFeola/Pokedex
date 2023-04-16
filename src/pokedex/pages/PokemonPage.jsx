@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { usePokemons } from '../hooks/usePokemons';
 const PokemonCardPage = ({ pokemon }) => {
-  const lag = 10
+
   return (
     <div className="pok-card">
       <div className="card-top-body text-center">
@@ -33,9 +33,14 @@ const PokemonCardPage = ({ pokemon }) => {
         <div className="row">
           <div className="col text-center">
             <h4>Types</h4>
-            <div className="col text-center p-2">
+            <div className="row text-center p-2">
               <p className='bg-primary text-white p-2 rounded'>{pokemon.types[0].type.name}</p>
-              
+              {
+                ( pokemon.types.length > 1 ) 
+                  && (
+                    <p className='bg-primary text-white p-2 rounded'>{pokemon.types[1].type.name}</p>
+                  )
+              }
             </div>
           </div>
         </div>
@@ -57,9 +62,9 @@ export const PokemonPage = () => {
 
         </Link>
       {
-        (isLoading)
+        ( isLoading )
           ? (
-            <h4>Cargando...</h4>
+            <h4 className='display-1 text-center m-5'>Cargando...</h4>
           )
           : (
             <PokemonCardPage pokemon={pokemon} />

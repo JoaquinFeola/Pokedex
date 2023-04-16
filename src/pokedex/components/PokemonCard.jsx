@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export const PokemonCard = ({ pokemonData }) => {
+export default function PokemonCard({ pokemonData }) {
     const navigate = useNavigate();
 
     const navigatePokemon = () => {

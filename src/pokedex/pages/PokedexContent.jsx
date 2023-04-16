@@ -1,13 +1,11 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { PokedexContext } from '../../context/PokedexContext';
-import { PokemonCard } from '../components/PokemonCard';
+import PokemonCard from '../components/PokemonCard';
 
-export const PokedexContent = () => {
+export default function PokedexContent() {
 
-  const { pokemons, maxPokemons, setMaxPokemons, isLoading } = useContext(PokedexContext);
-  const getAllPokemons = (e) => {
-    setMaxPokemons(maxPokemons + 988)
-  };
+  const { pokemons = [], isLoading } = useContext(PokedexContext);
+  
   return (
     <div className='content-page-container m-4'>
       <div className="d-flex flex-wrap gap-4 justify-content-center">
@@ -25,13 +23,6 @@ export const PokedexContent = () => {
         }
       </div>
 
-
-      <button className='btn btn-primary'
-        onClick={getAllPokemons}
-        disabled={isLoading}
-      >
-        Cargar todos
-      </button>
     </div>
   )
 }

@@ -10,9 +10,9 @@ import 'animate.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <HashRouter>
     <PokedexProvider>
-      {/* <React.StrictMode> */}
+      <React.StrictMode>
         <App />
-      {/* </React.StrictMode> */}
+      </React.StrictMode>
     </PokedexProvider>
   </HashRouter>
 
