@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { usePokemons } from '../hooks/usePokemons';
 const PokemonCardPage = ({ pokemon }) => {
-  console.log(pokemon);
   return (
     <div className="pok-card">
       <div className="card-top-body text-center">
